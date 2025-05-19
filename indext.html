@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thori Hub - Delicious Ice Cream</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="img/logo.jpg" alt="Thori Hub Logo"> <!-- Make sure 'Thori Hub.jpeg' is in your project folder -->
+                <h1>Thori Hub</h1>
+            </div>
+            <p class="tagline">Delicious Ice Cream for Everyone!</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="nav-link active" data-target="home-page">Home</a></li>
+                <li><a href="#" class="nav-link" data-target="flavour-page">Flavours</a></li>
+                <li><a href="#" class="nav-link" data-target="order-page">Order</a></li>
+                <li><a href="#" class="nav-link" data-target="about-page">About</a></li>
+                <!-- MODIFIED Login/Logout Nav Items -->
+                <li id="login-nav-item"><a href="#" class="nav-link" data-target="login-page">Login</a></li>
+                <li id="logout-nav-item" style="display:none;"><a href="#" class="nav-link" id="logout-link">Logout (<span id="loggedInUserSpan" style="font-weight:normal; font-style:italic;">user</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Page -->
+        <section id="home-page" class="page active-page">
+            <div class="welcome-section">
+                <h2>Welcome to Thori Hub</h2>
+                <img src="Front.jpg" alt="Ice Cream Collage" class="collage-img">
+                <p>At Thori Hub, we don’t just make ice cream—we craft experiences. Each scoop is a masterpiece, blending tradition with bold creativity to bring you flavors that surprise, delight, and keep you coming back for more.</p>
+            </div>
+            <div id="flavors-section-home">
+                <h3>Our Popular Flavours</h3>
+                <div class="flavors-grid-home">
+                     <div class="flavor-card-home">
+                        <img src="kesar.jpg" alt="Kesar Pista">
+                        <h4>Kesar Pista</h4>
+                    </div>
+                    <div class="flavor-card-home">
+                        <img src="chocolate.jpg" alt="Chocolate">
+                        <h4>Chocolate</h4>
+                    </div>
+                    <div class="flavor-card-home">
+                        <img src="butter.jpg" alt="Butter Scotch">
+                        <h4>Butter Scotch</h4>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 20px;">
+                    <a href="#" class="btn nav-link" data-target="flavour-page">See All Flavours</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- Flavour Page -->
+        <section id="flavour-page" class="page">
+            <h2>Our Delicious Flavours</h2>
+            <div class="flavors-grid">
+                <div class="flavor-card">
+                    <img src="kesar.jpg" alt="Kesar Pista">
+                    <h3>Kesar Pista</h3>
+                    <p>Smooth, creamy, and irresistibly rich—our Kesar Pista Ice Cream is crafted with real saffron and pistachios for a perfectly balanced sweetness.</p>
+                    <button class="btn order-flavor-btn" data-flavor="Kesar Pista">Order Kesar Pista</button>
+                </div>
+                <div class="flavor-card">
+                    <img src="chocolate.jpg" alt="Chocolate">
+                    <h3>Chocolate</h3>
+                    <p>Smooth, creamy, and packed with deep cocoa flavor—our Chocolate Ice Cream is a timeless favorite. Made with premium chocolate for an irresistibly bold taste.</p>
+                    <button class="btn order-flavor-btn" data-flavor="Chocolate">Order Chocolate</button>
+                </div>
+                <div class="flavor-card">
+                    <img src="butter.jpg" alt="Butter Scotch">
+                    <h3>Butter Scotch</h3>
+                    <p>Indulge in the rich, caramelized goodness of Butterscotch Ice Cream. With its creamy texture and delightful crunch of butterscotch bits.</p>
+                    <button class="btn order-flavor-btn" data-flavor="Butter Scotch">Order Butter Scotch</button>
+                </div>
+                <div class="flavor-card">
+                    <img src="black.jpg" alt="Black Current">
+                    <h3>Black Current</h3>
+                    <p>Tangy, sweet, and refreshingly fruity—our Black Currant Ice Cream bursts with the rich flavor of ripe black currants. Its deep, vibrant color and smooth, creamy texture make every scoop a delightfully indulgent treat.</p>
+                    <button class="btn order-flavor-btn" data-flavor="Black Current">Order Black Current</button>
+                </div>
+                <div class="flavor-card">
+                    <img src="green.jpg" alt="Green Lemon">
+                    <h3>Green Lemon</h3>
+                    <p>Bright, tangy, and irresistibly refreshing—our Green Lemon Ice Cream is bursting with citrusy goodness. Its smooth, creamy texture perfectly balances the bold lemon zing.</p>
+                    <button class="btn order-flavor-btn" data-flavor="Green Lemon">Order Green Lemon</button>
+                </div>
+                 <!-- Add more flavors as needed -->
+            </div>
+        </section>
+
+        <!-- Order Page -->
+        <section id="order-page" class="page">
+            <div class="form-page-container">
+                <h2>Place Your Order</h2>
+                <form id="order-form" class="form-content">
+                    <div class="form-group">
+                        <label for="order-name">Your Name</label>
+                        <input type="text" id="order-name" name="order-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="order-flavour">Flavour</label>
+                        <input type="text" id="order-flavour" name="order-flavour" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="order-size-price">Size</label>
+                        <select id="order-size-price" name="order-size-price" required>
+                            <option value="">-- Select Size --</option>
+                            <option value="100ml - Rs60">100ml - Rs60</option>
+                            <option value="200ml - Rs120">200ml - Rs120</option>
+                            <option value="500ml - Rs250">500ml - Rs250</option>
+                            <option value="1000ml - Rs400">1000ml - Rs400</option>
+                            <option value="4000ml - Rs1300">4000ml - Rs1300 (Party Pack)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="order-quantity">Quantity</label>
+                        <input type="number" id="order-quantity" name="order-quantity" min="1" value="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="order-address">Delivery Address</label>
+                        <textarea id="order-address" name="order-address" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Order Now</button>
+                    <p class="message" id="orderMessage"></p>
+                </form>
+            </div>
+        </section>
+
+        <!-- About Page -->
+        <section id="about-page" class="page">
+            <h2>About Thori Hub</h2>
+            <div class="about-content">
+                <p>Established in 2020, Thori Hub is a proudly local ice cream company based in Thori-2, Parsa, Nepal. Founded by Hari Parajuli, Thori Hub was created with a passion for delivering refreshing, high-quality ice cream to the community, using locally-sourced ingredients and a commitment to great taste.</p>
+                <p>From a small beginning, Thori Hub has grown into a beloved brand in the region, known for its rich flavors, creamy textures, and friendly service. Whether it's a sunny afternoon treat or a special celebration, our ice creams have become a go-to choice for families, friends, and visitors alike.</p>
+                <p>At Thori Hub, we believe that ice cream brings people together— and every scoop tells a story of dedication, freshness, and local pride.</p>
+            </div>
+        </section>
+
+        <!-- Login Page -->
+        <section id="login-page" class="page">
+            <div class="auth-form-container">
+                <h2>Sign in</h2>
+                <form id="login-form" class="form-content">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" name="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" name="login-password" required>
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" id="remember-me" name="remember-me">
+                        <label for="remember-me">Remember me</label>
+                    </div>
+                    <button type="submit" class="btn">Sign in</button>
+                    <p class="message" id="loginMessage"></p>
+                    <button type="button" class="btn btn-secondary btn-google-signin">Sign in with Google</button>
+                    <p class="form-link"><a href="#" class="nav-link" data-target="forgot-password-page">Forgotten your password?</a></p>
+                </form>
+                <p class="auth-switch-link">OR <a href="#" class="nav-link" data-target="create-account-page">Create an account</a></p>
+            </div>
+        </section>
+
+        <!-- Create Account Page -->
+        <section id="create-account-page" class="page">
+            <div class="auth-form-container">
+                <h2>Create your account</h2>
+                <form id="signup-form" class="form-content">
+                    <div class="form-group">
+                        <label for="signup-fullname">Full Name</label>
+                        <input type="text" id="signup-fullname" name="signup-fullname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-phone">Phone number</label>
+                        <input type="tel" id="signup-phone" name="signup-phone" pattern="[0-9]{10}" title="Please enter a 10-digit phone number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-email">Email Address</label>
+                        <input type="email" id="signup-email" name="signup-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <input type="password" id="signup-password" name="signup-password" minlength="8" title="Password must be at least 8 characters" required>
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">Accept our <a href="#" id="terms-link" target="_blank" rel="noopener noreferrer">Terms and Conditions</a></label>
+                    </div>
+                    <button type="submit" class="btn">Create Account</button>
+                    <p class="message" id="signupMessage"></p>
+                </form>
+                <p class="auth-switch-link">Already have an account? <a href="#" class="nav-link" data-target="login-page">Log in here</a></p>
+            </div>
+        </section>
+
+        <!-- Forgot Password Page -->
+        <section id="forgot-password-page" class="page">
+            <div class="auth-form-container">
+                <h2>Forgot Your Password?</h2>
+                <p class="form-description">Enter your email address and we'll send you a link to reset your password (simulation).</p>
+                <form id="forgotPasswordForm" class="form-content">
+                    <div class="form-group">
+                        <label for="forgot-email">Email Address:</label>
+                        <input type="email" id="forgot-email" name="email" required>
+                    </div>
+                    <button type="submit" class="btn">Send Reset Link</button>
+                    <p class="message" id="forgotMessage"></p>
+                </form>
+                <p class="form-link"><a href="#" class="nav-link" data-target="login-page">Back to Login</a></p>
+            </div>
+        </section>
+
+        <!-- Reset Password Page -->
+        <section id="reset-password-page" class="page">
+            <div class="auth-form-container">
+                <h2>Reset Your Password</h2>
+                <p class="form-description">Enter your new password below. This page is typically accessed via a link from your email.</p>
+                <form id="resetPasswordForm" class="form-content">
+                    <input type="hidden" id="resetToken" name="resetToken" value="dummy_token_for_simulation">
+                    <div class="form-group">
+                        <label for="newPassword">New Password:</label>
+                        <input type="password" id="newPassword" name="newPassword" minlength="8" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm New Password:</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" minlength="8" required>
+                    </div>
+                    <button type="submit" class="btn">Reset Password</button>
+                    <p class="message" id="resetMessage"></p>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="img/logo.jpg" alt="Thori Hub Footer Logo">
+            <h3>Thori Hub</h3>
+        </div>
+        <div class="footer-contact">
+            <p><strong>Location:</strong> Thori-2, Parsa, Nepal</p>
+            <p><strong>Contact:</strong> Phone: 9815282500</p>
+        </div>
+        <div class="footer-copyright">
+            <p>© <span id="current-year"></span> Thori Hub. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
